@@ -1,99 +1,120 @@
-# Projeto 01 - Lista de Tarefas
+# Projeto 001 - Todo List
 
-Este projeto é um CRUD simples para gerenciar tarefas.
-
-### Funcionalidades
-
-- Adicionar, editar e excluir tarefas
-- Marcar tarefas como concluídas ou pendentes
-
-### Como Rodar o Projeto
-
-1. Clone o repositório.
-2. Navegue até a pasta `D01-TODO-LIST`.
-3. Execute `rails server` e acesse `http://localhost:3000`.
-
-### Passo a Passo do Desenvolvimento
-
-#### Estrutura Inicial do Projeto
-
-Criar uma estrutura básica do projeto Rails dentro de um diretório chamado D01-TODO-LIST
-
-```bash
-rails new D01-TODO-LIST
-```
-
-Navegue até o diretório do projeto:
-
-```bash
-cd D01-TODO-LIST
-```
+Este projeto é um CRUD simples para gerenciar tarefas. Ele utiliza o Ruby on Rails para fornecer funcionalidades básicas de criação, leitura, atualização e exclusão de tarefas, com foco na organização e na produtividade.
 
 ---
 
-#### Estrutura Básica do Projeto (CRUD de Tarefas)
+## Funcionalidades
 
-**Gerar o Scaffold**:
-
-```bash
-rails generate scaffold Task title:string description:text completed:boolean
-```
-
-• Isso criará o modelo Task, o controlador e as views para o CRUD básico.
-•O campo completed será um boolean que indica se a tarefa foi concluída ou não.
-
-**Executar as Migrações**:
-
-```bash
-rails db:migrate
-```
-
-**Configurar o Roteamento Inicials**:
-No config/routes.rb, defina a root do aplicativo como a index de tarefas:
-
-```bash
-root "tasks#index"
-```
-
-**Executar o Servidor**:
-Inicie o servidor para ver o projeto funcionando:
-
-```bash
-rails server
-```
-
-Acesse **http://localhost:3000** para verificar se o CRUD de tarefas está funcionando corretamente.
+- Adicionar novas tarefas.
+- Editar tarefas existentes.
+- Marcar tarefas como concluídas ou pendentes.
+- Excluir tarefas.
 
 ---
 
-### Tarefas de Exemplo
+## Passo a Passo do Desenvolvimento
 
-1. **Título:** Comprar mantimentos
-   **Descrição:** Fazer uma lista de compras e comprar frutas, legumes e alimentos essenciais para a semana.
+### 1. Criar a Estrutura Inicial
 
-2. **Título:** Estudar Ruby on Rails
-   **Descrição:** Dedicar pelo menos uma hora para estudar o básico de Rails, incluindo rotas, controladores e modelos.
+1. Crie o projeto Rails:
 
-3. **Título:** Limpar a casa
-   **Descrição:** Realizar uma limpeza geral na casa, incluindo a cozinha, banheiro e sala de estar.
+   ```bash
+   rails new todo-list --skip-git
+   ```
 
-4. **Título:** Atualizar currículo
-   **Descrição:** Revisar e atualizar o currículo com as últimas experiências e habilidades.
+2. Navegue até o diretório do projeto:
+   ```bash
+   cd todo-list
+   ```
 
-5. **Título:** Fazer exercícios
-   **Descrição:** Completar uma rotina de exercícios de 30 minutos para manter a saúde em dia.
+---
 
-6. **Título:** Planejar o orçamento mensal
-   **Descrição:** Analisar os gastos do mês e definir um orçamento para as próximas semanas.
+### 2. Gerar o Scaffold para Tarefas
 
-7. **Título:** Organizar documentos
-   **Descrição:** Separar e organizar documentos importantes em uma pasta adequada.
+1. Gere o scaffold para o modelo de tarefas:
 
-8. **Título:** Aprender JavaScript
-   **Descrição:** Dedicar 45 minutos para aprender sobre funções e manipulação de DOM com JavaScript.
+   ```bash
+   rails generate scaffold Task title:string description:text completed:boolean
+   ```
 
-9. **Título:** Preparar apresentação
-   **Descrição:** Criar slides e preparar conteúdo para a apresentação de sexta-feira.
+2. Execute as migrações para criar a tabela no banco de dados:
 
-10. **Título:** Resolver pendências bancárias
-    **Descrição:** Verificar o extrato bancário e resolver qualquer pendência financeira.
+   ```bash
+   rails db:migrate
+   ```
+
+3. Configure a rota inicial no arquivo `config/routes.rb`:
+   ```ruby
+   Rails.application.routes.draw do
+     root "tasks#index"
+   end
+   ```
+
+---
+
+### 3. Testar o CRUD
+
+1. Inicie o servidor Rails:
+
+   ```bash
+   rails server
+   ```
+
+2. Acesse o aplicativo em: [http://localhost:3000](http://localhost:3000).
+
+3. Teste as funcionalidades de:
+   - Adicionar uma nova tarefa.
+   - Editar uma tarefa existente.
+   - Marcar tarefas como concluídas ou pendentes.
+   - Excluir tarefas.
+
+---
+
+## Estrutura do Modelo
+
+O modelo `Task` possui os seguintes atributos:
+
+- `title` (string): O título da tarefa.
+- `description` (text): Uma descrição detalhada da tarefa.
+- `completed` (boolean): Indica se a tarefa foi concluída.
+
+---
+
+## Como Rodar o Projeto
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/felipegenuino/projects-with-rails.git
+   ```
+
+2. Navegue até o diretório do projeto:
+
+   ```bash
+   cd projects-with-rails/e001-todo-list
+   ```
+
+3. Instale as dependências:
+
+   ```bash
+   bundle install
+   ```
+
+4. Inicie o servidor:
+
+   ```bash
+   rails server
+   ```
+
+5. Acesse no navegador: [http://localhost:3000](http://localhost:3000).
+
+---
+
+## Tecnologias Usadas
+
+- Ruby on Rails
+
+---
+
+Se tiver dúvidas ou sugestões para melhorar este projeto, sinta-se à vontade para abrir uma issue ou enviar um pull request!
