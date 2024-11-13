@@ -1,0 +1,372 @@
+Started GET "/" for ::1 at 2024-11-13 00:29:45 -0300
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='D01TodoList'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='D01TodoList'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='D01TodoList'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/felipegenuino/.asdf/installs/ruby/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/felipegenuino/.asdf/installs/ruby/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.4ms | GC: 0.0ms)
+Completed 200 OK in 57ms (Views: 5.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='D01TodoList'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2024-11-13 03:31:00.706062', '2024-11-13 03:31:00.706065') RETURNING "key" /*application='D01TodoList'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='D01TodoList'*/[0m
+Migrating to CreateTasks (20241113033035)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='D01TodoList'*/[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "completed" boolean, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='D01TodoList'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241113033035') RETURNING "version" /*application='D01TodoList'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='D01TodoList'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='D01TodoList'*/[0m
+Started GET "/tasks" for ::1 at 2024-11-13 00:32:14 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='D01TodoList'*/[0m
+Processing by TasksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (1.5ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/views/tasks/index.html.erb:8
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.8ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.5ms | GC: 1.3ms)
+Completed 200 OK in 106ms (Views: 15.1ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 3.3ms)
+
+
+Started GET "/tasks" for ::1 at 2024-11-13 00:32:18 -0300
+Processing by TasksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/views/tasks/index.html.erb:8
+  Rendered tasks/index.html.erb within layouts/application (Duration: 40.8ms | GC: 29.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 41.2ms | GC: 29.4ms)
+Completed 200 OK in 83ms (Views: 41.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 29.4ms)
+
+
+Started GET "/t" for ::1 at 2024-11-13 00:32:18 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/t"):
+  
+Started GET "/favicon.ico" for ::1 at 2024-11-13 00:32:18 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for ::1 at 2024-11-13 00:32:23 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/felipegenuino/.asdf/installs/ruby/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/felipegenuino/.asdf/installs/ruby/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.5ms | GC: 0.0ms)
+Completed 200 OK in 42ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/" for ::1 at 2024-11-13 00:32:25 -0300
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/felipegenuino/.asdf/installs/ruby/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/felipegenuino/.asdf/installs/ruby/3.2.2/lib/ruby/gems/3.2.0/gems/railties-8.0.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | GC: 0.0ms)
+Completed 200 OK in 37ms (Views: 0.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2024-11-13 00:32:26 -0300
+Processing by TasksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/views/tasks/index.html.erb:8
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.9ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.4ms | GC: 0.4ms)
+Completed 200 OK in 35ms (Views: 2.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/tasks/new" for ::1 at 2024-11-13 00:32:28 -0300
+Processing by TasksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 12.4ms | GC: 0.3ms)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 13.3ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.2ms | GC: 0.5ms)
+Completed 200 OK in 55ms (Views: 14.5ms | ActiveRecord: 1.9ms (0 queries, 0 cached) | GC: 1.4ms)
+
+
+Started POST "/tasks" for ::1 at 2024-11-13 00:32:39 -0300
+Processing by TasksController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"title"=>"Title", "description"=>"description", "completed"=>"0"}, "commit"=>"Create Task"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:27:in `block in create'
+  [1m[36mTask Create (2.5ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "completed", "created_at", "updated_at") VALUES ('Title', 'description', 0, '2024-11-13 03:32:39.878281', '2024-11-13 03:32:39.878281') RETURNING "id" /*action='create',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/tasks/1
+Completed 302 Found in 44ms (ActiveRecord: 3.6ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/tasks/1" for ::1 at 2024-11-13 00:32:39 -0300
+Processing by TasksController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 1 LIMIT 1 /*action='show',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:63:in `set_task'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/_task.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered tasks/show.html.erb within layouts/application (Duration: 2.6ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | GC: 0.4ms)
+Completed 200 OK in 31ms (Views: 3.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.6ms)
+
+
+Started GET "/tasks" for ::1 at 2024-11-13 00:32:41 -0300
+Processing by TasksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/views/tasks/index.html.erb:8
+  Rendered tasks/_task.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 36ms (Views: 1.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks/1" for ::1 at 2024-11-13 00:32:42 -0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 1 LIMIT 1 /*action='show',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:63:in `set_task'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/_task.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 1.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2024-11-13 00:32:42 -0300
+Processing by TasksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks/1" for ::1 at 2024-11-13 00:32:43 -0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 1 LIMIT 1 /*action='show',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:63:in `set_task'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/_task.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 1.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks/1" for ::1 at 2024-11-13 00:32:43 -0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 1 LIMIT 1 /*action='show',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:63:in `set_task'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/_task.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 1.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks/1" for ::1 at 2024-11-13 00:32:44 -0300
+Processing by TasksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 1 LIMIT 1 /*action='show',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:63:in `set_task'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/_task.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 36ms (Views: 1.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2024-11-13 00:32:45 -0300
+Processing by TasksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/views/tasks/index.html.erb:8
+  Rendered tasks/_task.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 1.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 2.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks/1/edit" for ::1 at 2024-11-13 00:32:46 -0300
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 1 LIMIT 1 /*action='edit',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:63:in `set_task'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered tasks/edit.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 2.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/tasks/1" for ::1 at 2024-11-13 00:32:46 -0300
+Processing by TasksController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 1 LIMIT 1 /*action='destroy',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:63:in `set_task'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:52:in `destroy'
+  [1m[36mTask Destroy (0.5ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = 1 /*action='destroy',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:52:in `destroy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:52:in `destroy'
+Redirected to http://localhost:3000/tasks
+Completed 303 See Other in 34ms (ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2024-11-13 00:32:46 -0300
+Processing by TasksController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/views/tasks/index.html.erb:8
+  Rendered tasks/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.2ms | GC: 0.0ms)
+Completed 200 OK in 59ms (Views: 1.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2024-11-13 00:32:47 -0300
+Processing by TasksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 38ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks/new" for ::1 at 2024-11-13 00:32:48 -0300
+Processing by TasksController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 6.8ms | GC: 5.2ms)
+  Rendered tasks/new.html.erb within layouts/application (Duration: 7.3ms | GC: 5.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | GC: 5.2ms)
+Completed 200 OK in 45ms (Views: 8.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 5.2ms)
+
+
+Started POST "/tasks" for ::1 at 2024-11-13 00:33:03 -0300
+Processing by TasksController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"title"=>"Title #01", "description"=>"description #01", "completed"=>"0"}, "commit"=>"Create Task"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:27:in `block in create'
+  [1m[36mTask Create (1.6ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "completed", "created_at", "updated_at") VALUES ('Title #01', 'description #01', 0, '2024-11-13 03:33:03.708331', '2024-11-13 03:33:03.708331') RETURNING "id" /*action='create',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:27:in `block in create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:27:in `block in create'
+Redirected to http://localhost:3000/tasks/2
+Completed 302 Found in 46ms (ActiveRecord: 2.5ms (1 query, 0 cached) | GC: 2.4ms)
+
+
+Started GET "/tasks/2" for ::1 at 2024-11-13 00:33:03 -0300
+Processing by TasksController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.2ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 2 LIMIT 1 /*action='show',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:63:in `set_task'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/_task.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered tasks/show.html.erb within layouts/application (Duration: 0.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 1.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks" for ::1 at 2024-11-13 00:33:04 -0300
+Processing by TasksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/views/tasks/index.html.erb:8
+  Rendered tasks/_task.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 3.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks/2/edit" for ::1 at 2024-11-13 00:33:04 -0300
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 2 LIMIT 1 /*action='edit',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:63:in `set_task'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 1.4ms | GC: 0.3ms)
+  Rendered tasks/edit.html.erb within layouts/application (Duration: 1.7ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.3ms)
+Completed 200 OK in 36ms (Views: 2.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.3ms)
+
+
+Started PATCH "/tasks/2" for ::1 at 2024-11-13 00:33:07 -0300
+Processing by TasksController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "task"=>{"title"=>"Title #01", "description"=>"description #01", "completed"=>"1"}, "commit"=>"Update Task", "id"=>"2"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 2 LIMIT 1 /*action='update',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:63:in `set_task'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:40:in `block in update'
+  [1m[36mTask Update (0.6ms)[0m  [1m[33mUPDATE "tasks" SET "completed" = 1, "updated_at" = '2024-11-13 03:33:07.076839' WHERE "tasks"."id" = 2 /*action='update',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:40:in `block in update'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:40:in `block in update'
+Redirected to http://localhost:3000/tasks/2
+Completed 302 Found in 42ms (ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/tasks/2" for ::1 at 2024-11-13 00:33:07 -0300
+Processing by TasksController#show as TURBO_STREAM
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 2 LIMIT 1 /*action='show',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:63:in `set_task'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/show.html.erb within layouts/application
+  Rendered tasks/_task.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered tasks/show.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 29ms (Views: 1.5ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/tasks/2/edit" for ::1 at 2024-11-13 00:33:08 -0300
+Processing by TasksController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" WHERE "tasks"."id" = 2 LIMIT 1 /*action='edit',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/controllers/tasks_controller.rb:63:in `set_task'
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/edit.html.erb within layouts/application
+  Rendered tasks/_form.html.erb (Duration: 2.0ms | GC: 0.5ms)
+  Rendered tasks/edit.html.erb within layouts/application (Duration: 2.4ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.5ms)
+Completed 200 OK in 36ms (Views: 3.7ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/tasks" for ::1 at 2024-11-13 00:33:09 -0300
+Processing by TasksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/views/tasks/index.html.erb:8
+  Rendered tasks/_task.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 2.5ms | GC: 0.4ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.4ms)
+Completed 200 OK in 36ms (Views: 3.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/" for ::1 at 2024-11-13 00:33:32 -0300
+Processing by TasksController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (1.3ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks" /*action='index',application='D01TodoList',controller='tasks'*/[0m
+  ↳ app/views/tasks/index.html.erb:8
+  Rendered tasks/_task.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered tasks/index.html.erb within layouts/application (Duration: 5.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 7.1ms | ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
