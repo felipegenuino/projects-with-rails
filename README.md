@@ -2,4 +2,5 @@
 
 Lista de projetos:
 
-1. [D01 todo list](d01-todo-list/README.md)
+1. [E001 todo list](e001-todo-list/README.md)
+2. [E002 rails with tailwind](e002-rails-with-tailwind/README.md)
